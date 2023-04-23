@@ -23,8 +23,12 @@ const SearchBar = ({
   searchValue,
 
 }: SearchBarProps) => {
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+}
+
   return (
-    <form className="flex flex-col w-full order-3 md:items-center md:order-2 md:w-4/6 md:flex-row  md:justify-start gap-5">
+    <form className="flex flex-col w-full order-3 md:items-center md:order-2 md:w-4/6 md:flex-row  md:justify-start gap-5" onSubmit={handleSubmit}>
       <div className=" flex justify-between border-solid border-gray-300 border px-2 rounded-md md:items-center shadow-sm h-10 md:w-1/2">
         <SearchingInput
           searchValue={searchValue}
